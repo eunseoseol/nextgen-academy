@@ -46,7 +46,7 @@ export default function Page() {
             style={{boxShadow: "0 0 24px rgba(16,185,129,.25), inset 0 0 12px rgba(16,185,129,.15)"}}
           >
             <span className="font-medium">네온 컨택트</span>
-            <svg className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path dName="M5 12h14"/><path dName="M12 5l7 7-7 7"/></svg>
+            <svg className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </Link>
 
           {/* External Instagram */}
