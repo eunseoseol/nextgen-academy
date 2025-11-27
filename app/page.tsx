@@ -1,10 +1,14 @@
 // app/page.tsx (Client Component)
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Page() {
+  const [openMenu, setOpenMenu] = useState<"works" | "idea" | "people" | null>(
+    null
+  );
+
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Neon backdrop accents */}
@@ -44,12 +48,22 @@ export default function Page() {
 
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
           {/* Works Dropdown */}
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("works")}
+            onMouseLeave={() => setOpenMenu((prev) => (prev === "works" ? null : prev))}
+          >
             <button className="hover:text-white flex items-center gap-1">
               Works
               <span className="text-xs">▾</span>
             </button>
-            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-44 -translate-x-1/2 opacity-0 transition group-hover:opacity-100 group-hover:pointer-events-auto">
+            <div
+              className={`absolute left-1/2 top-full z-20 mt-3 w-44 -translate-x-1/2 transform transition-opacity transition-[opacity] duration-150 ${
+                openMenu === "works"
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
                 <Link
                   href="#studio"
@@ -74,12 +88,22 @@ export default function Page() {
           </div>
 
           {/* Idea Dropdown (Mission / Blog) */}
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("idea")}
+            onMouseLeave={() => setOpenMenu((prev) => (prev === "idea" ? null : prev))}
+          >
             <button className="hover:text-white flex items-center gap-1">
               Idea
               <span className="text-xs">▾</span>
             </button>
-            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 opacity-0 transition group-hover:opacity-100 group-hover:pointer-events-auto">
+            <div
+              className={`absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 transform transition-opacity duration-150 ${
+                openMenu === "idea"
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
                 <Link
                   href="#mission"
@@ -98,12 +122,24 @@ export default function Page() {
           </div>
 
           {/* People Dropdown */}
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("people")}
+            onMouseLeave={() =>
+              setOpenMenu((prev) => (prev === "people" ? null : prev))
+            }
+          >
             <button className="hover:text-white flex items-center gap-1">
               People
               <span className="text-xs">▾</span>
             </button>
-            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-36 -translate-x-1/2 opacity-0 transition group-hover:opacity-100 group-hover:pointer-events-auto">
+            <div
+              className={`absolute left-1/2 top-full z-20 mt-3 w-36 -translate-x-1/2 transform transition-opacity duration-150 ${
+                openMenu === "people"
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
                 <Link
                   href="/team"
@@ -141,7 +177,12 @@ export default function Page() {
             Next Generation
           </span>
         </h1>
-       
+        <p className="mt-6 max-w-2xl text-lg text-zinc-300">
+          검은 배경 위에 연두 네온의 심장.{" "}
+          <span className="text-white font-medium">Next Gen</span>은 창업가와
+          크리에이터를 위한 실험실입니다. 새로운 제품과 문화를 빠르게 만들고,
+          세상에 증명합니다.
+        </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="#contact"
@@ -151,6 +192,7 @@ export default function Page() {
                 "0 0 30px rgba(127,255,0,.8), inset 0 0 16px rgba(127,255,0,.4)",
             }}
           >
+            <span className="font-medium">네온 컨택트</span>
             <svg
               className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
               viewBox="0 0 24 24"
@@ -185,7 +227,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* About / Founder intro (섹션은 유지, 메뉴에서만 제거됨) */}
+      {/* About / Founder intro */}
       <section
         id="about"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
@@ -420,7 +462,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Vision strip (섹션만 유지, 메뉴에는 없음) */}
+      {/* Vision strip */}
       <section
         id="vision"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
