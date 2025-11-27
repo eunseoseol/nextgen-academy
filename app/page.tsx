@@ -36,30 +36,83 @@ export default function Page() {
       {/* Nav */}
       <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
         <Link
-          href="#"
+          href="/"
           className="font-semibold tracking-wide text-[#7fff00] hover:text-white transition"
         >
           NEXT GEN
         </Link>
+
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
           <Link href="#about" className="hover:text-white">
             About
           </Link>
+
           <Link href="#vision" className="hover:text-white">
             Vision
           </Link>
-          <Link href="#work" className="hover:text-white">
-            Work
-          </Link>
+
+          {/* Works Dropdown */}
+          <div className="relative group">
+            <button className="hover:text-white flex items-center gap-1">
+              Works
+              <span className="text-xs">▾</span>
+            </button>
+            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-44 -translate-x-1/2 opacity-0 transition group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                <Link
+                  href="#studio"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Next Gen Studio
+                </Link>
+                <Link
+                  href="#academy"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Next Gen Academy
+                </Link>
+                <Link
+                  href="#ventures"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Next Gen Ventures
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* People Dropdown */}
+          <div className="relative group">
+            <button className="hover:text-white flex items-center gap-1">
+              People
+              <span className="text-xs">▾</span>
+            </button>
+            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-36 -translate-x-1/2 opacity-0 transition group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                <Link
+                  href="/team"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Team
+                </Link>
+                <Link
+                  href="/career"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Career
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <Link href="#mission" className="hover:text-white">
             Mission
           </Link>
-          <Link href="#team" className="hover:text-white">
-            Team
-          </Link>
-          <Link href="#career" className="hover:text-white">
-            Career
-          </Link>
+
           <Link href="#contact" className="hover:text-white">
             Contact
           </Link>
@@ -189,30 +242,70 @@ export default function Page() {
             Prototype → Beta → Launch
           </span>
         </div>
+
         <div className="grid gap-6 md:grid-cols-3">
-          {["Creator Suite", "AI Study Coach", "Commerce OS"].map(
-            (title, idx) => (
-              <div
-                key={title}
-                className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
-              >
-                <div className="flex items-center justify-between">
-                  <p className="text-lg font-semibold text-white">{title}</p>
-                  <span className="text-xs text-[#7fff00]">
-                    {idx === 0 ? "Live" : idx === 1 ? "Beta" : "Build"}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
-                  크리에이터와 창업가를 위해 설계된 네온 스택. 데이터로 학습하며
-                  스스로 진화하는 제품을 만듭니다.
-                </p>
-                <div className="mt-6 flex items-center gap-2 text-sm text-zinc-200">
-                  <span className="inline-flex h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_12px_rgba(127,255,0,1)]" />
-                  <span>빠른 실험 · 유저 피드백 루프 · 미니멀 UI</span>
-                </div>
-              </div>
-            )
-          )}
+          {/* Next Gen Studio */}
+          <div
+            id="studio"
+            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
+          >
+            <div className="flex items-center justify-between">
+              <p className="text-lg font-semibold text-white">
+                Next Gen Studio
+              </p>
+              <span className="text-xs text-[#7fff00]">Live</span>
+            </div>
+            <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+              크리에이터와 창업가를 위한 제품·콘텐츠 실험실. 숏폼, 서비스,
+              브랜드를 빠르게 만들고 검증합니다.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-sm text-zinc-200">
+              <span className="inline-flex h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_12px_rgba(127,255,0,1)]" />
+              <span>Media · Product · Brand</span>
+            </div>
+          </div>
+
+          {/* Next Gen Academy */}
+          <div
+            id="academy"
+            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
+          >
+            <div className="flex items-center justify-between">
+              <p className="text-lg font-semibold text-white">
+                Next Gen Academy
+              </p>
+              <span className="text-xs text-[#7fff00]">Beta</span>
+            </div>
+            <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+              10·20대를 위한 크리에이터/창업 교육 프로그램. 실전 중심 커리큘럼과
+              멘토링으로, 바로 실행 가능한 스킬을 제공합니다.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-sm text-zinc-200">
+              <span className="inline-flex h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_12px_rgba(127,255,0,1)]" />
+              <span>Workshops · Cohorts · Mentoring</span>
+            </div>
+          </div>
+
+          {/* Next Gen Ventures */}
+          <div
+            id="ventures"
+            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
+          >
+            <div className="flex items-center justify-between">
+              <p className="text-lg font-semibold text-white">
+                Next Gen Ventures
+              </p>
+              <span className="text-xs text-[#7fff00]">Build</span>
+            </div>
+            <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+              크리에이터 이코노미, AI, 스마트 리빙에 투자하는 초기 단계 베이비
+              펀드. 미디어와 네트워크를 레버리지로 사용합니다.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-sm text-zinc-200">
+              <span className="inline-flex h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_12px_rgba(127,255,0,1)]" />
+              <span>Dealflow · Community · Capital</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -251,7 +344,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team (요약 블럭 – 메인 페이지용) */}
       <section
         id="team"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
@@ -261,10 +354,10 @@ export default function Page() {
             <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
               Team
             </p>
-            <h2 className="mt-2 text-3xl font-bold">송유빈</h2>
+            <h2 className="mt-2 text-3xl font-bold">Core Members</h2>
             <p className="mt-3 text-zinc-300 leading-relaxed">
-              사용자와 창업가가 진짜로 원하는 것을 빠르게 만들고 검증합니다.
-              Next Gen은 프로토타입 → 베타 → 론치까지의 사이클을 네온처럼
+              사용자와 창업가가 진짜로 원하는 것을 빠르게 만들고 검증하는 작은
+              팀입니다. 프로토타입 → 베타 → 론치까지의 사이클을 네온처럼
               선명하게, 짧게 가져갑니다.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -277,10 +370,12 @@ export default function Page() {
                 Instagram
               </a>
               <Link
-                href="#contact"
+                href="/team"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7fff00]"
               >
-                Contact
+                View full team →
               </Link>
             </div>
           </div>
@@ -323,9 +418,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Vision */}
+      {/* Vision strip */}
       <section
-        id="vision"
+        id="vision-strip"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
       >
         <div className="rounded-3xl border border-[#7fff00]/40 p-10 bg-gradient-to-br from-black to-zinc-900/60">
@@ -346,7 +441,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Career */}
+      {/* Career (요약 블럭 – 메인 페이지용) */}
       <section
         id="career"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
@@ -364,7 +459,9 @@ export default function Page() {
               </p>
             </div>
             <Link
-              href="#contact"
+              href="/career"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-2xl border border-[#7fff00]/70 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
             >
               포지션 제안하기
