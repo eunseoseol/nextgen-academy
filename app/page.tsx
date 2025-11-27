@@ -9,6 +9,10 @@ export default function Page() {
     null
   );
 
+  const toggleMenu = (menu: "works" | "idea" | "people") => {
+    setOpenMenu((prev) => (prev === menu ? null : menu));
+  };
+
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Neon backdrop accents */}
@@ -48,117 +52,110 @@ export default function Page() {
 
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
           {/* Works Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setOpenMenu("works")}
-            onMouseLeave={() => setOpenMenu((prev) => (prev === "works" ? null : prev))}
-          >
-            <button className="hover:text-white flex items-center gap-1">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => toggleMenu("works")}
+              className="hover:text-white flex items-center gap-1"
+            >
               Works
               <span className="text-xs">▾</span>
             </button>
-            <div
-              className={`absolute left-1/2 top-full z-20 mt-3 w-44 -translate-x-1/2 transform transition-opacity transition-[opacity] duration-150 ${
-                openMenu === "works"
-                  ? "opacity-100 pointer-events-auto"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="#studio"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Studio
-                </Link>
-                <Link
-                  href="#academy"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Academy
-                </Link>
-                <Link
-                  href="#ventures"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Ventures
-                </Link>
+            {openMenu === "works" && (
+              <div className="absolute left-1/2 top-full z-20 mt-3 w-44 -translate-x-1/2">
+                <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                  <Link
+                    href="#studio"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Next Gen Studio
+                  </Link>
+                  <Link
+                    href="#academy"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Next Gen Academy
+                  </Link>
+                  <Link
+                    href="#ventures"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Next Gen Ventures
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Idea Dropdown (Mission / Blog) */}
-          <div
-            className="relative"
-            onMouseEnter={() => setOpenMenu("idea")}
-            onMouseLeave={() => setOpenMenu((prev) => (prev === "idea" ? null : prev))}
-          >
-            <button className="hover:text-white flex items-center gap-1">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => toggleMenu("idea")}
+              className="hover:text-white flex items-center gap-1"
+            >
               Idea
               <span className="text-xs">▾</span>
             </button>
-            <div
-              className={`absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 transform transition-opacity duration-150 ${
-                openMenu === "idea"
-                  ? "opacity-100 pointer-events-auto"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="#mission"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Mission
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Blog
-                </Link>
+            {openMenu === "idea" && (
+              <div className="absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2">
+                <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                  <Link
+                    href="#mission"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Mission
+                  </Link>
+                  <Link
+                    href="/blog"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Blog
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* People Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setOpenMenu("people")}
-            onMouseLeave={() =>
-              setOpenMenu((prev) => (prev === "people" ? null : prev))
-            }
-          >
-            <button className="hover:text-white flex items-center gap-1">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => toggleMenu("people")}
+              className="hover:text-white flex items-center gap-1"
+            >
               People
               <span className="text-xs">▾</span>
             </button>
-            <div
-              className={`absolute left-1/2 top-full z-20 mt-3 w-36 -translate-x-1/2 transform transition-opacity duration-150 ${
-                openMenu === "people"
-                  ? "opacity-100 pointer-events-auto"
-                  : "opacity-0 pointer-events-none"
-              }`}
-            >
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/team"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Team
-                </Link>
-                <Link
-                  href="/career"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Career
-                </Link>
+            {openMenu === "people" && (
+              <div className="absolute left-1/2 top-full z-20 mt-3 w-36 -translate-x-1/2">
+                <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                  <Link
+                    href="/team"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Team
+                  </Link>
+                  <Link
+                    href="/career"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Career
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </nav>
       </header>
