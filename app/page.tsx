@@ -25,6 +25,10 @@ export default function Page() {
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
           <Link href="#about" className="hover:text-white">About</Link>
           <Link href="#vision" className="hover:text-white">Vision</Link>
+          <Link href="#work" className="hover:text-white">Work</Link>
+          <Link href="#mission" className="hover:text-white">Mission</Link>
+          <Link href="#team" className="hover:text-white">Team</Link>
+          <Link href="#career" className="hover:text-white">Career</Link>
           <Link href="#contact" className="hover:text-white">Contact</Link>
         </nav>
       </header>
@@ -70,20 +74,77 @@ export default function Page() {
       {/* Founder card */}
       <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         <div className="grid gap-6 md:grid-cols-2">
+      {/* Work */}
+      <section id="work" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">Work</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold">우리가 만든 것들</h2>
+          </div>
+          <span className="rounded-full border border-[#7fff00]/40 px-4 py-2 text-xs text-zinc-300">Prototype → Beta → Launch</span>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {["Creator Suite", "AI Study Coach", "Commerce OS"].map((title, idx) => (
+            <div
+              key={title}
+              className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-lg font-semibold text-white">{title}</p>
+                <span className="text-xs text-[#7fff00]">{idx === 0 ? "Live" : idx === 1 ? "Beta" : "Build"}</span>
+              </div>
+              <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+                크리에이터와 창업가를 위해 설계된 네온 스택. 데이터로 학습하며 스스로 진화하는 제품을 만듭니다.
+              </p>
+              <div className="mt-6 flex items-center gap-2 text-sm text-zinc-200">
+                <span className="inline-flex h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_12px_rgba(127,255,0,1)]" />
+                <span>빠른 실험 · 유저 피드백 루프 · 미니멀 UI</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section id="mission" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-[#7fff00]/60 bg-gradient-to-br from-black to-zinc-900/70 p-10 shadow-[0_0_40px_rgba(127,255,0,.2)]">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">Mission</p>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">미래는 만드는 자의 것</h2>
+          <p className="mt-4 max-w-3xl text-lg text-zinc-200 leading-relaxed">
+            우리는 사용자 문제를 레이저처럼 관통하는 솔루션을 만듭니다. 작은 팀이지만 강한 브랜드, 빠른 제품, 깊은 문화로 시장을 절단합니다.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {["Neon Speed", "Human Insight", "Beautiful Systems"].map((keyword) => (
+              <div key={keyword} className="rounded-2xl border border-[#7fff00]/30 bg-zinc-900/40 p-4">
+                <p className="text-[#7fff00] font-semibold">{keyword}</p>
+                <p className="mt-2 text-sm text-zinc-300">가설 → 실험 → 증명의 루틴을 반복하며, 사람을 움직이는 디테일을 만듭니다.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section id="team" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] items-start">
           <div className="rounded-3xl border border-[#7fff00]/60 bg-gradient-to-b from-zinc-900/60 to-zinc-900/20 p-6 backdrop-blur">
             <h2 className="text-xl tracking-wide text-[#7fff00]">Founder</h2>
+            <h2 className="text-xl tracking-wide text-[#7fff00]">Team</h2>
             <p className="mt-2 text-3xl font-bold">송유빈</p>
             <p className="mt-3 text-zinc-300 leading-relaxed">
               사용자와 창업가가 진짜로 원하는 것을 빠르게 만들고 검증합니다. Next Gen은
               프로토타입 → 베타 → 론치까지의 사이클을 네온처럼 선명하게, 짧게 가져갑니다.
+              사용자와 창업가가 진짜로 원하는 것을 빠르게 만들고 검증합니다. Next Gen은 프로토타입 → 베타 → 론치까지의 사이클을 네온처럼 선명하게, 짧게 가져갑니다.
             </p>
             <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <a href="https://instagram.com/nextgen.kr" target="_blank" rel="noreferrer" className="rounded-xl border border-[#7fff00]/60 px-4 py-2 text-sm text-[#7fff00] hover:bg-[#7fff00]/10">Instagram</a>
               <Link href="#contact" className="rounded-xl border border-zinc-700 px-4 py-2 text-sm text-zinc-200 hover:border-[#7fff00]">Contact</Link>
             </div>
           </div>
           <div className="rounded-3xl border border-zinc-800 p-6 bg-zinc-900/30">
             <h3 className="text-lg text-zinc-300">What we build</h3>
+            <h3 className="text-lg text-zinc-300">How we work</h3>
             <ul className="mt-3 space-y-3 text-zinc-300">
               <li className="flex items-start gap-3"><span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]"/>네온 같은 간결함의 제품 경험</li>
               <li className="flex items-start gap-3"><span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]"/>크리에이터 & 스타트업 도구</li>
@@ -91,6 +152,11 @@ export default function Page() {
             </ul>
             <div className="mt-6 rounded-xl border border-[#7fff00]/40 p-4 text-sm text-zinc-400">
               Next.js + Tailwind 중심의 모던 스택. 빠른 배포, 데이터 기반 개선, 미학에 집착.
+            <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-zinc-400">
+              <div className="rounded-xl border border-[#7fff00]/30 p-3">Next.js & AI-native</div>
+              <div className="rounded-xl border border-[#7fff00]/30 p-3">Rapid shipping cadence</div>
+              <div className="rounded-xl border border-[#7fff00]/30 p-3">Design-first culture</div>
+              <div className="rounded-xl border border-[#7fff00]/30 p-3">Community obsessed</div>
             </div>
           </div>
         </div>
@@ -105,6 +171,27 @@ export default function Page() {
           <p className="mt-4 max-w-3xl text-zinc-300">
             사용자 문제를 레이저처럼 관통하는 솔루션. Next Gen은 작은 팀으로 큰 임팩트를 만듭니다.
           </p>
+      {/* Career */}
+      <section id="career" className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        <div className="rounded-3xl border border-[#7fff00]/50 bg-zinc-900/40 p-8 shadow-[0_0_30px_rgba(127,255,0,.25)]">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">Career</p>
+              <h2 className="mt-2 text-3xl font-bold">Next Gen 합류하기</h2>
+              <p className="mt-3 text-zinc-300">함께 네온을 쏘아 올릴 제품 디자이너, AI 엔지니어, 마케터를 찾습니다.</p>
+            </div>
+            <Link
+              href="#contact"
+              className="rounded-2xl border border-[#7fff00]/70 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
+            >
+              포지션 제안하기
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3 text-sm text-zinc-200">
+            <div className="rounded-xl border border-[#7fff00]/30 bg-zinc-900/50 p-4">Remote-first, Seoul hub</div>
+            <div className="rounded-xl border border-[#7fff00]/30 bg-zinc-900/50 p-4">Ownership & rapid impact</div>
+            <div className="rounded-xl border border-[#7fff00]/30 bg-zinc-900/50 p-4">Equity + growth budget</div>
+          </div>
         </div>
       </section>
 
@@ -130,13 +217,3 @@ export default function Page() {
             </a>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 flex items-center justify-between text-xs text-zinc-500">
-        <span>© {new Date().getFullYear()} Next Gen. All rights reserved.</span>
-        <span className="text-[#7fff00]">Made with Next.js</span>
-      </footer>
-    </main>
-  );
-}
