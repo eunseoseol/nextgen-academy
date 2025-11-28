@@ -51,7 +51,6 @@ export default function Page() {
             </button>
             <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-               
                 <Link
                   href="/academy"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
@@ -64,7 +63,7 @@ export default function Page() {
                 >
                   Next Gen Ventures
                 </Link>
-                 <Link
+                <Link
                   href="/studio"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
@@ -74,7 +73,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Idea Dropdown (Mission / Blog) */}
+          {/* Idea Dropdown → /mission, /blog 라우트 */}
           <div className="relative group">
             <button className="hover:text-white flex items-center gap-1">
               Idea
@@ -83,7 +82,7 @@ export default function Page() {
             <div className="absolute left-1/2 top-full z-20 w-40 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
                 <Link
-                  href="#mission"
+                  href="/mission"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
                   Mission
@@ -98,7 +97,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* People Dropdown */}
+          {/* People Dropdown → /team, /career 라우트 */}
           <div className="relative group">
             <button className="hover:text-white flex items-center gap-1">
               People
@@ -108,16 +107,12 @@ export default function Page() {
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
                 <Link
                   href="/team"
-                  target="_blank"
-                  rel="noreferrer"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
                   Team
                 </Link>
                 <Link
                   href="/career"
-                  target="_blank"
-                  rel="noreferrer"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
                   Career
@@ -142,7 +137,7 @@ export default function Page() {
             Next Generation
           </span>
         </h1>
-       
+
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="#contact"
@@ -152,7 +147,7 @@ export default function Page() {
                 "0 0 30px rgba(127,255,0,.8), inset 0 0 16px rgba(127,255,0,.4)",
             }}
           >
-           
+            <span className="font-medium">네온 컨택트</span>
             <svg
               className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
               viewBox="0 0 24 24"
@@ -166,12 +161,10 @@ export default function Page() {
               <path d="M12 5l7 7-7 7" />
             </svg>
           </Link>
-
-        
         </div>
 
- 
-        <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
+        {/* Work section (cards) */}
+        <div className="mt-16 flex items-center justify-between gap-4 flex-wrap mb-8">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
               Work
@@ -186,8 +179,6 @@ export default function Page() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 text-sm text-zinc-300">
-         
-
           <Link
             href="/academy"
             className="group rounded-3xl border border-[#7fff00]/30 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
@@ -201,7 +192,7 @@ export default function Page() {
               </span>
             </div>
             <p className="mt-3 leading-relaxed">
-             국내 최대 규모의 크리에이터 이코노미 교육
+              국내 최대 규모의 크리에이터 이코노미 교육
             </p>
           </Link>
 
@@ -221,7 +212,8 @@ export default function Page() {
               지구상에서 가장 젊은 벤처캐피탈
             </p>
           </Link>
-           <Link
+
+          <Link
             href="/studio"
             className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
           >
@@ -240,7 +232,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Mission 섹션 (메인 페이지 요약) */}
       <section
         id="mission"
         className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
@@ -274,9 +266,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* Team 요약, Career, Contact 등은 그대로 유지 */}
-      {/* ... (원래 있던 섹션들 그대로 두면 됨) ... */}
 
       {/* Contact */}
       <section
