@@ -43,7 +43,7 @@ export default function Page() {
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
-          {/* Works Dropdown → 별도 페이지 라우트 */}
+          {/* Works Dropdown */}
           <div className="relative group">
             <button className="hover:text-white flex items-center gap-1">
               Works
@@ -73,7 +73,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Idea Dropdown → /mission, /blog 라우트 */}
+          {/* Idea Dropdown */}
           <div className="relative group">
             <button className="hover:text-white flex items-center gap-1">
               Idea
@@ -97,7 +97,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* People Dropdown → /team, /career 라우트 */}
+          {/* People Dropdown */}
           <div className="relative group">
             <button className="hover:text-white flex items-center gap-1">
               People
@@ -123,176 +123,221 @@ export default function Page() {
         </nav>
       </header>
 
-      {/* Hero */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
-        <h1 className="text-5xl sm:text-7xl font-extrabold leading-[1.05]">
-          <span className="block text-white">Build the</span>
-          <span
-            className="mt-2 block text-[#7fff00]"
-            style={{
-              textShadow:
-                "0 0 20px rgba(127,255,0,1), 0 0 40px rgba(127,255,0,.9)",
-            }}
-          >
-            Next Generation
-          </span>
-        </h1>
-
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            href="#contact"
-            className="group inline-flex items-center gap-2 rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:text-black hover:bg-[#7fff00]/80 hover:border-[#7fff00] transition"
-            style={{
-              boxShadow:
-                "0 0 30px rgba(127,255,0,.8), inset 0 0 16px rgba(127,255,0,.4)",
-            }}
-          >
-            <span className="font-medium">네온 컨택트</span>
-            <svg
-              className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-
-        {/* Work section (cards) */}
-        <div className="mt-16 flex items-center justify-between gap-4 flex-wrap mb-8">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
-              Work
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold">
-              우리가 만든 것들
-            </h2>
-          </div>
-          <span className="rounded-full border border-[#7fff00]/40 px-4 py-2 text-xs text-zinc-300">
-            Prototype → Beta → Launch
-          </span>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3 text-sm text-zinc-300">
-          <Link
-            href="/academy"
-            className="group rounded-3xl border border-[#7fff00]/30 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
-          >
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-semibold text-white">
-                Next Gen Academy
-              </p>
-              <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                View →
-              </span>
-            </div>
-            <p className="mt-3 leading-relaxed">
-              국내 최대 규모의 크리에이터 이코노미 교육
-            </p>
-          </Link>
-
-          <Link
-            href="/ventures"
-            className="group rounded-3xl border border-[#7fff00]/30 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
-          >
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-semibold text-white">
-                Next Gen Ventures
-              </p>
-              <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                View →
-              </span>
-            </div>
-            <p className="mt-3 leading-relaxed">
-              지구상에서 가장 젊은 벤처캐피탈
-            </p>
-          </Link>
-
-          <Link
-            href="/studio"
-            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
-          >
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-semibold text-white">
-                Next Gen Summit
-              </p>
-              <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                View →
-              </span>
-            </div>
-            <p className="mt-3 leading-relaxed">
-              국내 최대 규모의 크리에이터 & 벤처 컨퍼런스
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Mission 섹션 (메인 페이지 요약) */}
-      <section
-        id="mission"
-        className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
-      >
-        <div className="rounded-3xl border border-[#7fff00]/60 bg-gradient-to-br from-black to-zinc-900/70 p-10 shadow-[0_0_40px_rgba(127,255,0,.2)]">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
+        {/* Mission Hero */}
+        <section className="pt-10 sm:pt-16 pb-16 sm:pb-20">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#7fff00]">
             Mission
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">
-            미래는 만드는 자의 것
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-200 leading-relaxed">
-            우리는 사용자 문제를 레이저처럼 관통하는 솔루션을 만듭니다. 작은
-            팀이지만 강한 브랜드, 빠른 제품, 깊은 문화로 시장을 절단합니다.
+          <h1 className="mt-4 text-4xl sm:text-6xl md:text-7xl font-semibold leading-[1.05]">
+            Crash the{" "}
+            <span
+              className="text-[#7fff00]"
+              style={{
+                textShadow:
+                  "0 0 20px rgba(127,255,0,1), 0 0 40px rgba(127,255,0,.9)",
+              }}
+            >
+              Gerontocracy
+            </span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-sm sm:text-base text-zinc-300 leading-relaxed">
+            Next Gen은 기득권의 느린 의사결정과 올드 머니가 지배하던 시대를 넘어,
+            10·20대 창업가와 크리에이터가 직접 경제·문화·도시를 설계하는
+            세대를 만들기 위해 존재합니다. 미디어, 교육, 자본, 커뮤니티를 한 번에
+            다루는 스택으로, 다음 세대를 위한 인프라를 구축합니다.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {["Neon Speed", "Human Insight", "Beautiful Systems"].map(
-              (keyword) => (
-                <div
-                  key={keyword}
-                  className="rounded-2xl border border-[#7fff00]/30 bg-zinc-900/40 p-4"
-                >
-                  <p className="text-[#7fff00] font-semibold">{keyword}</p>
-                  <p className="mt-2 text-sm text-zinc-300">
-                    가설 → 실험 → 증명의 루틴을 반복하며, 사람을 움직이는
-                    디테일을 만듭니다.
-                  </p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact */}
-      <section
-        id="contact"
-        className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
-      >
-        <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
-          <h2 className="text-2xl font-semibold">Contact</h2>
-          <p className="mt-2 text-zinc-300">콜라보 / 제휴 / 채용 문의</p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a
-              href="mailto:hello@nextgen.kr"
-              className="rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
-            >
-              hello@nextgen.kr
-            </a>
-            <a
-              href="https://instagram.com/nextgen.kr"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00]"
-            >
-              Instagram @nextgen.kr
-            </a>
+        {/* “Products to join” – Academy / Summit */}
+        <section className="pb-16 border-t border-zinc-800/80 pt-10">
+          <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold">
+              Join the Next Gen
+            </h2>
+            <span className="text-xs rounded-full border border-[#7fff00]/40 px-4 py-2 text-zinc-300">
+              교육 · 서밋으로 시작하기
+            </span>
           </div>
-        </div>
-      </section>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Academy */}
+            <Link
+              href="/academy"
+              className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
+                Program
+              </p>
+              <div className="mt-3 flex items-center justify-between gap-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                  Next Gen Academy
+                </h3>
+                <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
+                  Explore →
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+                10·20대를 위한 크리에이터 & 창업 실전 아카데미.
+                숏폼, 서비스, 브랜드, AI 도구를 활용해{" "}
+                <span className="text-white font-medium">
+                  포트폴리오와 실제 성과
+                </span>
+                를 만드는 프로그램입니다.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-zinc-400">
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  4–6주 코호트
+                </span>
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  Creator / Founder 트랙
+                </span>
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  Execution-first
+                </span>
+              </div>
+            </Link>
+
+            {/* Summit */}
+            <Link
+              href="/studio"
+              className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
+                Event
+              </p>
+              <div className="mt-3 flex items-center justify-between gap-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                  Next Gen Summit 2025
+                </h3>
+                <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
+                  Explore →
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+                서울 DDP에서 열리는{" "}
+                <span className="text-white font-medium">
+                  크리에이터 · 창업가 · 젊은 투자자
+                </span>
+                를 위한 프라이빗 서밋. 이야기, 네트워킹, 그리고 다음 세대의
+                게임 플랜이 공유됩니다.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-zinc-400">
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  Private · Invite-only
+                </span>
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  Seoul · DDP
+                </span>
+                <span className="rounded-full border border-zinc-700 px-3 py-1">
+                  2025년 12월
+                </span>
+              </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="pb-20 border-t border-zinc-800/80 pt-10">
+          <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
+            <h2 className="text-2xl sm:text-3xl font-semibold">
+              Meet our leadership
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-stretch">
+            {/* Eunseo card */}
+            <Link
+              href="/team"
+              className="group rounded-3xl border border-[#7fff00]/60 bg-zinc-900/60 p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1 hover:border-[#7fff00] transition"
+            >
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
+                  Founder & CEO
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-white">
+                  Eunseo Seol
+                </h3>
+                <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
+                  고등학생 시절부터 스타트업 영상 제작, Tesla·Nvidia·Google
+                  투자, 한국 최연소 VC 파트너를 거쳐 Next Gen을 창업한 00년생.
+                  크리에이터 이코노미, 스마트 리빙, 젊은 창업 생태계를
+                  중심으로{" "}
+                  <span className="text-white font-medium">
+                    “다음 세대의 인프라”
+                  </span>
+                  를 빌드하고 있습니다.
+                </p>
+              </div>
+              <div className="mt-5 flex items-center justify-between text-xs text-zinc-400">
+                <span>View full team</span>
+                <span className="inline-flex items-center gap-1 text-[#7fff00] group-hover:translate-x-0.5 transition">
+                  /team
+                  <svg
+                    className="h-3 w-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h13" />
+                    <path d="M12 5l6 7-6 7" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
+
+            {/* Small context card */}
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 flex flex-col justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+                  Next Gen Stack
+                </p>
+                <p className="mt-3 leading-relaxed">
+                  Eunseo는 Academy · Ventures · Summit · House로 이어지는
+                  Next Gen 스택을 설계하고 있습니다. 각 브랜드는 따로 보이지만,
+                  실제로는{" "}
+                  <span className="text-white font-medium">
+                    하나의 게임 플랜
+                  </span>
+                  으로 묶여 있습니다.
+                </p>
+              </div>
+              <div className="mt-4 text-[11px] text-zinc-500">
+                더 많은 팀 스토리는 <span className="text-zinc-300">Team 페이지</span>에서
+                확인할 수 있습니다.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="pb-24 border-t border-zinc-800/80 pt-10">
+          <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
+            <h2 className="text-2xl font-semibold">Contact</h2>
+            <p className="mt-2 text-zinc-300">콜라보 / 제휴 / 채용 문의</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href="mailto:hello@nextgen.kr"
+                className="rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
+              >
+                hello@nextgen.kr
+              </a>
+              <a
+                href="https://instagram.com/nextgen.kr"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00]"
+              >
+                Instagram @nextgen.kr
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
