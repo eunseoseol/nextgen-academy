@@ -128,6 +128,138 @@ function Nav() {
   );
 }
 
+function Footer() {
+  return (
+    <footer className="border-t border-zinc-800 bg-black">
+      {/* Top: logo + socials + columns */}
+      <div className="mx-auto max-w-6xl px-6 py-10 lg:py-14">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          {/* Logo + SNS */}
+          <div className="space-y-4">
+            <div className="text-lg font-semibold tracking-wide">
+              <span className="text-[#7fff00]">Next</span> Gen
+            </div>
+            <div className="flex items-center gap-4 text-zinc-400 text-xl">
+              <a
+                href="https://instagram.com/nextgen.kr"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#7fff00] transition"
+                aria-label="Instagram"
+              >
+                ◯
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#7fff00] transition"
+                aria-label="X"
+              >
+                X
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#7fff00] transition"
+                aria-label="YouTube"
+              >
+                ▶
+              </a>
+            </div>
+          </div>
+
+          {/* Columns */}
+          <div className="grid gap-8 text-sm text-zinc-300 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-2">
+              <p className="font-semibold text-white">Programs</p>
+              <Link href="/academy" className="block hover:text-[#7fff00]">
+                Next Gen Academy
+              </Link>
+              <Link href="/studio" className="block hover:text-[#7fff00]">
+                Next Gen Summit
+              </Link>
+              <Link href="/ventures" className="block hover:text-[#7fff00]">
+                Next Gen Ventures
+              </Link>
+              <Link href="/blog" className="block hover:text-[#7fff00]">
+                Blog
+              </Link>
+            </div>
+
+            <div className="space-y-2">
+              <p className="font-semibold text-white">Community</p>
+              <Link href="/mission" className="block hover:text-[#7fff00]">
+                Mission
+              </Link>
+              <Link href="/team" className="block hover:text-[#7fff00]">
+                Team
+              </Link>
+              <Link href="/career" className="block hover:text-[#7fff00]">
+                Careers
+              </Link>
+              <a
+                href="mailto:hello@nextgen.kr"
+                className="block hover:text-[#7fff00]"
+              >
+                Contact
+              </a>
+            </div>
+
+            <div className="space-y-2">
+              <p className="font-semibold text-white">Company</p>
+              <p className="text-zinc-400 text-xs uppercase tracking-[0.18em]">
+                Next Gen Corp.
+              </p>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                서울특별시 강남구 테헤란로 201
+                <br />
+                (역삼동, 아주빌딩 2층)
+              </p>
+              <p className="text-xs text-zinc-500">
+                Email:{" "}
+                <a
+                  href="mailto:hello@nextgen.kr"
+                  className="hover:text-[#7fff00]"
+                >
+                  hello@nextgen.kr
+                </a>
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <p className="font-semibold text-white">Legal</p>
+              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+                Terms of service
+              </button>
+              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+                Privacy policy
+              </button>
+              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+                Cookie policy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom: locale + copy */}
+      <div className="border-t border-zinc-900">
+        <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col gap-3 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+          <button className="underline underline-offset-2 hover:text-[#7fff00]">
+            South Korea (한국어)
+          </button>
+          <p className="leading-relaxed">
+            © {new Date().getFullYear()} Next Gen Corp. All rights reserved. Built
+            by the creator & founder generation.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -347,8 +479,11 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Contact + 주소 */}
-        <section id="contact" className="pb-24 border-t border-zinc-800/80 pt-10">
+        {/* Contact */}
+        <section
+          id="contact"
+          className="pb-24 border-t border-zinc-800/80 pt-10"
+        >
           <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
             <h2 className="text-2xl font-semibold">Contact</h2>
             <p className="mt-2 text-zinc-300">콜라보 / 제휴 / 채용 문의</p>
@@ -369,7 +504,6 @@ export default function Page() {
               </a>
             </div>
 
-            {/* 주소 */}
             <div className="mt-6 text-sm text-zinc-400">
               <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
                 Address
@@ -381,6 +515,8 @@ export default function Page() {
           </div>
         </section>
       </div>
+
+      <Footer />
     </main>
   );
 }
