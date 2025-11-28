@@ -68,7 +68,7 @@ export default function Page() {
                   href="/studio"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
-                  Next Gen Studio
+                  Next Gen Summit
                 </Link>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function Page() {
                 "0 0 30px rgba(127,255,0,.8), inset 0 0 16px rgba(127,255,0,.4)",
             }}
           >
-            <span className="font-medium">네온 컨택트</span>
+           
             <svg
               className="h-4 w-4 translate-x-0 transition group-hover:translate-x-0.5"
               viewBox="0 0 24 24"
@@ -167,72 +167,10 @@ export default function Page() {
             </svg>
           </Link>
 
-          {/* External Instagram */}
-          <a
-            href="https://instagram.com/nextgen.kr"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00] transition"
-          >
-            <svg
-              className="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden
-            >
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.8A6.2 6.2 0 1 0 18.2 14 6.2 6.2 0 0 0 12 7.8Zm0 2.4A3.8 3.8 0 1 1 8.2 14 3.8 3.8 0 0 1 12 10.2Zm6.5-4a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1Z" />
-            </svg>
-            <span className="font-medium">@nextgen.kr</span>
-          </a>
+        
         </div>
-      </section>
 
-      {/* About / Founder intro */}
-      <section
-        id="about"
-        className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
-      >
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#7fff00]/60 bg-zinc-900/40 p-6 backdrop-blur">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
-              About
-            </p>
-            <h2 className="mt-2 text-3xl font-bold">Next Gen Studio</h2>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              Next Gen은 창업가와 크리에이터를 위한 네온 실험실입니다. 아이디어를
-              빠르게 프로토타이핑하고, 베타 테스트를 통해 시장에 검증된 제품과
-              콘텐츠를 만들어냅니다.
-            </p>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              서울을 베이스로, 실리콘밸리와 글로벌 크리에이터 네트워크와 함께
-              성장하는 스튜디오를 지향합니다.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h3 className="text-lg font-semibold text-white">Key Focus</h3>
-            <ul className="mt-3 space-y-3 text-sm text-zinc-300">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]" />
-                크리에이터 × 스타트업 협업 제품
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]" />
-                AI 네이티브 툴 & 스택
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[#7fff00] shadow-[0_0_14px_rgba(127,255,0,1)]" />
-                커뮤니티가 사랑하는 브랜드 빌딩
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Work – 여기서는 요약만, 상세는 /studio /academy /ventures에서 */}
-      <section
-        id="work"
-        className="relative z-10 mx-auto max-w-6xl px-6 pb-24"
-      >
+ 
         <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#7fff00]">
