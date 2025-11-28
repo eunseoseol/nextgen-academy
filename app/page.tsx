@@ -1,8 +1,132 @@
-// app/page.tsx (Client Component)
+// app/page.tsx
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+
+function Nav() {
+  const [openMenu, setOpenMenu] = useState<null | "works" | "idea" | "people">(null);
+
+  const toggleMenu = (menu: "works" | "idea" | "people") => {
+    setOpenMenu((prev) => (prev === menu ? null : menu));
+  };
+
+  const closeMenu = () => setOpenMenu(null);
+
+  return (
+    <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
+      <Link
+        href="/"
+        className="font-semibold tracking-wide text-[#7fff00] hover:text-white transition"
+        onClick={closeMenu}
+      >
+        NEXT GEN
+      </Link>
+
+      <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
+        {/* Works */}
+        <div className="relative">
+          <button
+            className="hover:text-white flex items-center gap-1"
+            onClick={() => toggleMenu("works")}
+          >
+            Works
+            <span className="text-xs">{openMenu === "works" ? "▴" : "▾"}</span>
+          </button>
+          {openMenu === "works" && (
+            <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2">
+              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                <Link
+                  href="/academy"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Next Gen Academy
+                </Link>
+                <Link
+                  href="/ventures"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Next Gen Ventures
+                </Link>
+                <Link
+                  href="/studio"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Next Gen Summit
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Idea */}
+        <div className="relative">
+          <button
+            className="hover:text-white flex items-center gap-1"
+            onClick={() => toggleMenu("idea")}
+          >
+            Idea
+            <span className="text-xs">{openMenu === "idea" ? "▴" : "▾"}</span>
+          </button>
+          {openMenu === "idea" && (
+            <div className="absolute left-1/2 top-full z-20 w-40 -translate-x-1/2 pt-2">
+              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                <Link
+                  href="/mission"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Mission
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Blog
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* People */}
+        <div className="relative">
+          <button
+            className="hover:text-white flex items-center gap-1"
+            onClick={() => toggleMenu("people")}
+          >
+            People
+            <span className="text-xs">{openMenu === "people" ? "▴" : "▾"}</span>
+          </button>
+          {openMenu === "people" && (
+            <div className="absolute left-1/2 top-full z-20 w-36 -translate-x-1/2 pt-2">
+              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
+                <Link
+                  href="/team"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Team
+                </Link>
+                <Link
+                  href="/career"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                  onClick={closeMenu}
+                >
+                  Career
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
+  );
+}
 
 export default function Page() {
   return (
@@ -33,95 +157,7 @@ export default function Page() {
         className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(127,255,0,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(127,255,0,.35)_1px,transparent_1px)] [background-size:40px_40px]"
       />
 
-      {/* Nav */}
-      <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-semibold tracking-wide text-[#7fff00] hover:text-white transition"
-        >
-          NEXT GEN
-        </Link>
-
-        <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
-          {/* Works Dropdown */}
-          <div className="relative group">
-            <button className="hover:text-white flex items-center gap-1">
-              Works
-              <span className="text-xs">▾</span>
-            </button>
-            <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/academy"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Academy
-                </Link>
-                <Link
-                  href="/ventures"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Ventures
-                </Link>
-                <Link
-                  href="/studio"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Summit
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Idea Dropdown */}
-          <div className="relative group">
-            <button className="hover:text-white flex items-center gap-1">
-              Idea
-              <span className="text-xs">▾</span>
-            </button>
-            <div className="absolute left-1/2 top-full z-20 w-40 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/mission"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Mission
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Blog
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* People Dropdown */}
-          <div className="relative group">
-            <button className="hover:text-white flex items-center gap-1">
-              People
-              <span className="text-xs">▾</span>
-            </button>
-            <div className="absolute left-1/2 top-full z-20 w-36 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/team"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Team
-                </Link>
-                <Link
-                  href="/career"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Career
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Nav />
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
@@ -150,7 +186,7 @@ export default function Page() {
           </p>
         </section>
 
-        {/* “Products to join” – Academy / Summit */}
+        {/* Join cards */}
         <section className="pb-16 border-t border-zinc-800/80 pt-10">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
             <h2 className="text-2xl sm:text-3xl font-semibold">
@@ -247,7 +283,6 @@ export default function Page() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-stretch">
-            {/* Eunseo card */}
             <Link
               href="/team"
               className="group rounded-3xl border border-[#7fff00]/60 bg-zinc-900/60 p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1 hover:border-[#7fff00] transition"
@@ -290,7 +325,6 @@ export default function Page() {
               </div>
             </Link>
 
-            {/* Small context card */}
             <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 flex flex-col justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
@@ -307,14 +341,13 @@ export default function Page() {
                 </p>
               </div>
               <div className="mt-4 text-[11px] text-zinc-500">
-                더 많은 팀 스토리는 <span className="text-zinc-300">Team 페이지</span>에서
-                확인할 수 있습니다.
+                더 많은 팀 스토리는 Team 페이지에서 확인할 수 있습니다.
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact */}
+        {/* Contact + 주소 */}
         <section id="contact" className="pb-24 border-t border-zinc-800/80 pt-10">
           <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
             <h2 className="text-2xl font-semibold">Contact</h2>
@@ -334,6 +367,16 @@ export default function Page() {
               >
                 Instagram @nextgen.kr
               </a>
+            </div>
+
+            {/* 주소 */}
+            <div className="mt-6 text-sm text-zinc-400">
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                Address
+              </p>
+              <p className="mt-2">
+                서울특별시 강남구 테헤란로 201 (역삼동, 아주빌딩 2층)
+              </p>
             </div>
           </div>
         </section>
