@@ -201,8 +201,7 @@ export default function Page() {
               </span>
             </div>
             <p className="mt-3 leading-relaxed">
-              10·20대를 위한 크리에이터/창업 실전 아카데미. 실행 중심
-              커리큘럼을 제공합니다.
+             국내 최대 규모의 크리에이터 이코노미 교육
             </p>
           </Link>
 
@@ -219,8 +218,7 @@ export default function Page() {
               </span>
             </div>
             <p className="mt-3 leading-relaxed">
-              크리에이터 이코노미 · AI · 스마트 리빙에 투자하는 초기 단계
-              베이비 펀드입니다.
+              지구상에서 가장 젊은 벤처캐피탈
             </p>
           </Link>
            <Link
@@ -229,15 +227,14 @@ export default function Page() {
           >
             <div className="flex items-center justify-between">
               <p className="text-lg font-semibold text-white">
-                Next Gen Studio
+                Next Gen Summit
               </p>
               <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
                 View →
               </span>
             </div>
             <p className="mt-3 leading-relaxed">
-              제품·콘텐츠를 빠르게 만들고 검증하는 크리에이터/스타트업
-              실험실입니다.
+              국내 최대 규모의 크리에이터 & 벤처 컨퍼런스
             </p>
           </Link>
         </div>
