@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 function Nav() {
-  const [openMenu, setOpenMenu] = useState<null | "works" | "idea" | "people">(null);
+  const [openMenu, setOpenMenu] =
+    useState<null | "works" | "idea" | "people">(null);
 
   const toggleMenu = (menu: "works" | "idea" | "people") => {
     setOpenMenu((prev) => (prev === menu ? null : menu));
@@ -31,7 +32,9 @@ function Nav() {
             onClick={() => toggleMenu("works")}
           >
             Works
-            <span className="text-xs">{openMenu === "works" ? "▴" : "▾"}</span>
+            <span className="text-xs">
+              {openMenu === "works" ? "▴" : "▾"}
+            </span>
           </button>
           {openMenu === "works" && (
             <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2">
@@ -69,7 +72,9 @@ function Nav() {
             onClick={() => toggleMenu("idea")}
           >
             Idea
-            <span className="text-xs">{openMenu === "idea" ? "▴" : "▾"}</span>
+            <span className="text-xs">
+              {openMenu === "idea" ? "▴" : "▾"}
+            </span>
           </button>
           {openMenu === "idea" && (
             <div className="absolute left-1/2 top-full z-20 w-40 -translate-x-1/2 pt-2">
@@ -100,7 +105,9 @@ function Nav() {
             onClick={() => toggleMenu("people")}
           >
             People
-            <span className="text-xs">{openMenu === "people" ? "▴" : "▾"}</span>
+            <span className="text-xs">
+              {openMenu === "people" ? "▴" : "▾"}
+            </span>
           </button>
           {openMenu === "people" && (
             <div className="absolute left-1/2 top-full z-20 w-36 -translate-x-1/2 pt-2">
@@ -134,27 +141,43 @@ function Footer() {
       {/* Top: logo + socials + columns */}
       <div className="mx-auto max-w-6xl px-6 py-10 lg:py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          {/* Logo + SNS */}
+          {/* Logo + Socials */}
           <div className="space-y-4">
             <div className="text-lg font-semibold tracking-wide">
               <span className="text-[#7fff00]">Next</span> Gen
             </div>
-            <div className="flex items-center gap-4 text-zinc-400 text-xl">
+
+            {/* Social media links */}
+            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-zinc-400">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#7fff00] transition"
+              >
+                Facebook
+              </a>
+              <a
+                href="https://www.threads.net"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#7fff00] transition"
+              >
+                Threads
+              </a>
               <a
                 href="https://instagram.com/nextgen.kr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#7fff00] transition"
-                aria-label="Instagram"
               >
-                ◯
+                Instagram
               </a>
               <a
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#7fff00] transition"
-                aria-label="X"
               >
                 X
               </a>
@@ -163,9 +186,8 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-[#7fff00] transition"
-                aria-label="YouTube"
               >
-                ▶
+                YouTube
               </a>
             </div>
           </div>
@@ -230,15 +252,24 @@ function Footer() {
 
             <div className="space-y-2">
               <p className="font-semibold text-white">Legal</p>
-              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+              <Link
+                href="/terms"
+                className="block text-left text-zinc-400 hover:text-[#7fff00]"
+              >
                 Terms of service
-              </button>
-              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+              </Link>
+              <Link
+                href="/privacy"
+                className="block text-left text-zinc-400 hover:text-[#7fff00]"
+              >
                 Privacy policy
-              </button>
-              <button className="block text-left text-zinc-400 hover:text-[#7fff00]">
+              </Link>
+              <Link
+                href="/cookies"
+                className="block text-left text-zinc-400 hover:text-[#7fff00]"
+              >
                 Cookie policy
-              </button>
+              </Link>
             </div>
           </div>
         </div>
