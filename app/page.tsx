@@ -15,98 +15,70 @@ export default function Page() {
       </section>
 
       {/* ========================== */}
-      {/* Footer */}
-      {/* ========================== */}
-      <footer className="w-full border-t border-gray-800 bg-black text-gray-300">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 md:flex-row md:items-center md:justify-between">
+{/* SNS */}
+<div className="space-y-4">
+  <div className="text-lg font-semibold tracking-wide">
+    <span className="text-[#7fff00]">Next</span> Gen
+  </div>
 
-          {/* 왼쪽: 브랜드 영역 */}
-          <div className="space-y-1">
-            <p className="text-lg font-semibold text-white">Next Gen</p>
-            <p className="text-sm text-gray-400">
-              Built for the next generation of founders & creators.
-            </p>
-          </div>
+  {/* NEW: 5개 소셜 미디어 */}
+  <div className="flex items-center gap-4 text-zinc-400 text-[20px]">
+    {/* Facebook */}
+    <a
+      href="https://facebook.com"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-[#7fff00] transition"
+      aria-label="Facebook"
+    >
+      𝙁
+    </a>
 
-          {/* 중앙: Footer Navi 버튼 */}
-          <nav className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/about"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/blog"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/terms"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Terms
-            </Link>
-          </nav>
+    {/* Threads */}
+    <a
+      href="https://threads.net"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-[#7fff00] transition"
+      aria-label="Threads"
+    >
+      @
+    </a>
 
-          {/* 오른쪽: Social Link 버튼 */}
-          <div className="flex flex-wrap gap-3 text-sm">
-            <a
-              href="https://facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.threads.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Threads
-            </a>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://x.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              X
-            </a>
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              YouTube
-            </a>
-          </div>
-        </div>
+    {/* Instagram */}
+    <a
+      href="https://instagram.com/nextgen.kr"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-[#7fff00] transition"
+      aria-label="Instagram"
+    >
+      ◎
+    </a>
 
-        <div className="border-t border-gray-800">
-          <p className="mx-auto max-w-5xl px-4 py-4 text-xs text-gray-500">
-            © {new Date().getFullYear()} Next Gen. All rights reserved.
-          </p>
-        </div>
-      </footer>
+    {/* X (Twitter) */}
+    <a
+      href="https://x.com"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-[#7fff00] transition"
+      aria-label="X"
+    >
+      X
+    </a>
+
+    {/* YouTube */}
+    <a
+      href="https://youtube.com"
+      target="_blank"
+      rel="noreferrer"
+      className="hover:text-[#7fff00] transition"
+      aria-label="YouTube"
+    >
+      ▶
+    </a>
+  </div>
+</div>
     </main>
   );
 }
