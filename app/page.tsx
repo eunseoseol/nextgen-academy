@@ -51,12 +51,7 @@ export default function Page() {
             </button>
             <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/studio"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                >
-                  Next Gen Studio
-                </Link>
+               
                 <Link
                   href="/academy"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
@@ -68,6 +63,12 @@ export default function Page() {
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                 >
                   Next Gen Ventures
+                </Link>
+                 <Link
+                  href="/studio"
+                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
+                >
+                  Next Gen Studio
                 </Link>
               </div>
             </div>
@@ -141,12 +142,7 @@ export default function Page() {
             Next Generation
           </span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-zinc-300">
-          검은 배경 위에 연두 네온의 심장.{" "}
-          <span className="text-white font-medium">Next Gen</span>은 창업가와
-          크리에이터를 위한 실험실입니다. 새로운 제품과 문화를 빠르게 만들고,
-          세상에 증명합니다.
-        </p>
+       
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="#contact"
@@ -252,23 +248,7 @@ export default function Page() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 text-sm text-zinc-300">
-          <Link
-            href="/studio"
-            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
-          >
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-semibold text-white">
-                Next Gen Studio
-              </p>
-              <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                View →
-              </span>
-            </div>
-            <p className="mt-3 leading-relaxed">
-              제품·콘텐츠를 빠르게 만들고 검증하는 크리에이터/스타트업
-              실험실입니다.
-            </p>
-          </Link>
+         
 
           <Link
             href="/academy"
@@ -303,6 +283,23 @@ export default function Page() {
             <p className="mt-3 leading-relaxed">
               크리에이터 이코노미 · AI · 스마트 리빙에 투자하는 초기 단계
               베이비 펀드입니다.
+            </p>
+          </Link>
+           <Link
+            href="/studio"
+            className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/70"
+          >
+            <div className="flex items-center justify-between">
+              <p className="text-lg font-semibold text-white">
+                Next Gen Studio
+              </p>
+              <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
+                View →
+              </span>
+            </div>
+            <p className="mt-3 leading-relaxed">
+              제품·콘텐츠를 빠르게 만들고 검증하는 크리에이터/스타트업
+              실험실입니다.
             </p>
           </Link>
         </div>
