@@ -4,15 +4,23 @@ import Link from "next/link";
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
-      
+
       {/* ========================== */}
-      {/* Background Video (Google Drive) */}
+      {/* Background Video (Google Drive AutoPlay Optimized) */}
       {/* ========================== */}
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        controlsList="nodownload nofullscreen noremoteplayback"
+        onCanPlayThrough={(e) => {
+          const v = e.target as HTMLVideoElement;
+          if (v.paused) v.play();
+        }}
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       >
         <source
@@ -50,74 +58,19 @@ export default function Page() {
 
           {/* 중앙: Footer Navi 버튼 */}
           <nav className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/about"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/blog"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/terms"
-              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
-            >
-              Terms
-            </Link>
+            <Link href="/about" className="rounded-full border border-gray-600 px-3 py-1 hover:border-white hover:text-white transition">About</Link>
+            <Link href="/contact" className="rounded-full border border-gray-600 px-3 py-1 hover:border-white hover:text-white transition">Contact</Link>
+            <Link href="/blog" className="rounded-full border border-gray-600 px-3 py-1 hover:border-white hover:text-white transition">Blog</Link>
+            <Link href="/terms" className="rounded-full border border-gray-600 px-3 py-1 hover:border-white hover:text-white transition">Terms</Link>
           </nav>
 
           {/* 오른쪽: Social Link 버튼 */}
           <div className="flex flex-wrap gap-3 text-sm">
-            <a
-              href="https://facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.threads.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Threads
-            </a>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://x.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              X
-            </a>
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
-            >
-              YouTube
-            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-800 px-3 py-1 hover:bg-white hover:text-black transition">Facebook</a>
+            <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-800 px-3 py-1 hover:bg-white hover:text-black transition">Threads</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-800 px-3 py-1 hover:bg-white hover:text-black transition">Instagram</a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-800 px-3 py-1 hover:bg-white hover:text-black transition">X</a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-800 px-3 py-1 hover:bg-white hover:text-black transition">YouTube</a>
           </div>
         </div>
 
