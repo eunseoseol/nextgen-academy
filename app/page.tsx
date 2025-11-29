@@ -3,11 +3,28 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col">
+    <main className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
+      
+      {/* ========================== */}
+      {/* Background Video */}
+      {/* ========================== */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover opacity-40"
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
       {/* ========================== */}
       {/* Hero Section */}
       {/* ========================== */}
-      <section className="flex flex-col items-center justify-center flex-1 px-6 py-24 text-center">
+      <section className="relative z-10 flex flex-col items-center justify-center flex-1 px-6 py-24 text-center">
         <h1 className="text-5xl font-bold md:text-6xl">Next Gen</h1>
         <p className="mt-4 max-w-2xl text-lg text-gray-300">
           The media company for the next generation of founders & creators.
@@ -17,7 +34,7 @@ export default function Page() {
       {/* ========================== */}
       {/* Footer */}
       {/* ========================== */}
-      <footer className="w-full border-t border-gray-800 bg-black text-gray-300">
+      <footer className="relative z-10 w-full border-t border-gray-800 bg-black/80 backdrop-blur-md text-gray-300">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 md:flex-row md:items-center md:justify-between">
 
           {/* 왼쪽: 브랜드 영역 */}
@@ -64,3 +81,49 @@ export default function Page() {
               rel="noopener noreferrer"
               className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
             >
+              Facebook
+            </a>
+            <a
+              href="https://www.threads.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
+            >
+              Threads
+            </a>
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
+            >
+              X
+            </a>
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
+            >
+              YouTube
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800">
+          <p className="mx-auto max-w-5xl px-4 py-4 text-xs text-gray-500">
+            © {new Date().getFullYear()} Next Gen. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  );
+}
