@@ -1,473 +1,66 @@
 // app/page.tsx
-"use client";
-
-import React, { useState } from "react";
 import Link from "next/link";
 
-function Nav() {
-  const [openMenu, setOpenMenu] =
-    useState<null | "works" | "idea" | "people">(null);
-
-  const toggleMenu = (menu: "works" | "idea" | "people") => {
-    setOpenMenu((prev) => (prev === menu ? null : menu));
-  };
-
-  const closeMenu = () => setOpenMenu(null);
-
-  return (
-    <header className="relative z-10 mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
-      <Link
-        href="/"
-        className="font-semibold tracking-wide text-[#7fff00] hover:text-white transition"
-        onClick={closeMenu}
-      >
-        NEXT GEN
-      </Link>
-
-      <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-300">
-        {/* Works */}
-        <div className="relative">
-          <button
-            className="hover:text-white flex items-center gap-1"
-            onClick={() => toggleMenu("works")}
-          >
-            Works
-            <span className="text-xs">
-              {openMenu === "works" ? "▴" : "▾"}
-            </span>
-          </button>
-          {openMenu === "works" && (
-            <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                {/* Academy → 외부 URL */}
-                <a
-                  href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Next Gen Academy
-                </a>
-                {/* Ventures → 내부 라우트 */}
-                <Link
-                  href="/ventures"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Next Gen Ventures
-                </Link>
-                {/* Summit → 외부 URL */}
-                <a
-                  href="https://luma.com/err3tc9w"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Next Gen Summit
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Idea */}
-        <div className="relative">
-          <button
-            className="hover:text-white flex items-center gap-1"
-            onClick={() => toggleMenu("idea")}
-          >
-            Idea
-            <span className="text-xs">
-              {openMenu === "idea" ? "▴" : "▾"}
-            </span>
-          </button>
-          {openMenu === "idea" && (
-            <div className="absolute left-1/2 top-full z-20 w-40 -translate-x-1/2 pt-2">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/mission"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Mission
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Blog
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* People */}
-        <div className="relative">
-          <button
-            className="hover:text-white flex items-center gap-1"
-            onClick={() => toggleMenu("people")}
-          >
-            People
-            <span className="text-xs">
-              {openMenu === "people" ? "▴" : "▾"}
-            </span>
-          </button>
-          {openMenu === "people" && (
-            <div className="absolute left-1/2 top-full z-20 w-36 -translate-x-1/2 pt-2">
-              <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/team"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Team
-                </Link>
-                <Link
-                  href="/career"
-                  className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
-                  onClick={closeMenu}
-                >
-                  Career
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-zinc-800 bg-black">
-      {/* Top: logo + socials + columns */}
-      <div className="mx-auto max-w-6xl px-6 py-10 lg:py-14">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          {/* Logo + Socials */}
-          <div className="space-y-4">
-            <div className="text-lg font-semibold tracking-wide">
-              <span className="text-[#7fff00]">Next</span> Gen
-            </div>
-
-            {/* Social media links */}
-            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-zinc-400">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#7fff00] transition"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://www.threads.net"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#7fff00] transition"
-              >
-                Threads
-              </a>
-              <a
-                href="https://instagram.com/nextgen.kr"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#7fff00] transition"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#7fff00] transition"
-              >
-                X
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#7fff00] transition"
-              >
-                YouTube
-              </a>
-            </div>
-          </div>
-
-          {/* Columns */}
-          <div className="grid gap-8 text-sm text-zinc-300 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="space-y-2">
-              <p className="font-semibold text-white">Programs</p>
-              {/* Footer에서도 동일하게 외부 URL */}
-              <a
-                href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
-                target="_blank"
-                rel="noreferrer"
-                className="block hover:text-[#7fff00]"
-              >
-                Next Gen Academy
-              </a>
-              <a
-                href="https://luma.com/err3tc9w"
-                target="_blank"
-                rel="noreferrer"
-                className="block hover:text-[#7fff00]"
-              >
-                Next Gen Summit
-              </a>
-              <Link href="/ventures" className="block hover:text-[#7fff00]">
-                Next Gen Ventures
-              </Link>
-              <Link href="/blog" className="block hover:text-[#7fff00]">
-                Blog
-              </Link>
-            </div>
-
-            <div className="space-y-2">
-              <p className="font-semibold text-white">Community</p>
-              <Link href="/mission" className="block hover:text-[#7fff00]">
-                Mission
-              </Link>
-              <Link href="/team" className="block hover:text-[#7fff00]">
-                Team
-              </Link>
-              <Link href="/career" className="block hover:text-[#7fff00]">
-                Careers
-              </Link>
-              <a
-                href="mailto:hello@nextgen.kr"
-                className="block hover:text-[#7fff00]"
-              >
-                Contact
-              </a>
-            </div>
-
-            <div className="space-y-2">
-              <p className="font-semibold text-white">Company</p>
-              <p className="text-zinc-400 text-xs uppercase tracking-[0.18em]">
-                Next Gen Corp.
-              </p>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                서울특별시 강남구 테헤란로 201
-                <br />
-                (역삼동, 아주빌딩 2층)
-              </p>
-              <p className="text-xs text-zinc-500">
-                Email:{" "}
-                <a
-                  href="mailto:hello@nextgen.kr"
-                  className="hover:text-[#7fff00]"
-                >
-                  hello@nextgen.kr
-                </a>
-              </p>
-            </div>
-            <div className="space-y-2">
-              <p className="font-semibold text-white">Legal</p>
-              <Link
-                href="/terms"
-                className="block text-left text-zinc-400 hover:text-[#7fff00]"
-              >
-                Terms of service
-              </Link>
-              <Link
-                href="/privacy"
-                className="block text-left text-zinc-400 hover:text-[#7fff00]"
-              >
-                Privacy policy
-              </Link>
-              <Link
-                href="/cookies"
-                className="block text-left text-zinc-400 hover:text-[#7fff00]"
-              >
-                Cookie policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Bottom: locale + copy */}
-      <div className="border-t border-zinc-900">
-        <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col gap-3 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <button className="underline underline-offset-2 hover:text-[#7fff00]">
-            South Korea (한국어)
-          </button>
-          <p className="leading-relaxed">
-            © {new Date().getFullYear()} Next Gen Corp. All rights reserved. Built
-            by the creator & founder generation.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
 export default function Page() {
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover -z-10 opacity-35"
-      >
-        <source src="/background.mov" type="video/mp4" />
-      </video>
+    <main className="min-h-screen bg-black text-white flex flex-col">
+      {/* ========================== */}
+      {/* Hero Section */}
+      {/* ========================== */}
+      <section className="flex flex-col items-center justify-center flex-1 px-6 py-24 text-center">
+        <h1 className="text-5xl font-bold md:text-6xl">Next Gen</h1>
+        <p className="mt-4 max-w-2xl text-lg text-gray-300">
+          The media company for the next generation of founders & creators.
+        </p>
+      </section>
 
-      {/* Neon backdrop accents */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl opacity-40"
-          style={{
-            background:
-              "radial-gradient(40% 40% at 50% 50%, #7fff00 0%, rgba(127,255,0,0) 70%)",
-          }}
-        />
-        <div
-          className="absolute top-1/2 -translate-y-1/2 -right-24 h-80 w-80 rounded-full blur-3xl opacity-30"
-          style={{
-            background:
-              "radial-gradient(40% 40% at 50% 50%, #7fff00 0%, rgba(127,255,0,0) 70%)",
-          }}
-        />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#7fff00]/70 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#7fff00]/70 to-transparent" />
-      </div>
+      {/* ========================== */}
+      {/* Footer */}
+      {/* ========================== */}
+      <footer className="w-full border-t border-gray-800 bg-black text-gray-300">
+        <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 md:flex-row md:items-center md:justify-between">
 
-      {/* Grid overlay */}
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(127,255,0,.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(127,255,0,.35)_1px,transparent_1px)] [background-size:40px_40px]"
-      />
-
-      <Nav />
-
-      {/* MAIN CONTENT */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
-        {/* Mission Hero */}
-        <section className="pt-10 sm:pt-16 pb-16 sm:pb-20">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#7fff00]">
-            Mission
-          </p>
-          <h1 className="mt-4 text-4xl sm:text-6xl md:text-7xl font-semibold leading-[1.05]">
-            Crash the{" "}
-            <span
-              className="text-[#7fff00]"
-              style={{
-                textShadow:
-                  "0 0 20px rgba(127,255,0,1), 0 0 40px rgba(127,255,0,.9)",
-              }}
-            >
-              Gerontocracy
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-sm sm:text-base text-zinc-300 leading-relaxed">
-            Next Gen은 기득권의 느린 의사결정과 올드 머니가 지배하던 시대를 넘어,
-            10·20대 창업가와 크리에이터가 직접 경제·문화·도시를 설계하는
-            세대를 만들기 위해 존재합니다. 미디어, 교육, 자본, 커뮤니티를 한 번에
-            다루는 스택으로, 다음 세대를 위한 인프라를 구축합니다.
-          </p>
-        </section>
-        {/* Join cards */}
-        <section className="pb-16 border-t border-zinc-800/80 pt-10">
-          <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold">
-              Join the Next Gen
-            </h2>
-            <span className="text-xs rounded-full border border-[#7fff00]/40 px-4 py-2 text-zinc-300">
-              교육 · 서밋으로 시작하기
-            </span>
+          {/* 왼쪽: 브랜드 영역 */}
+          <div className="space-y-1">
+            <p className="text-lg font-semibold text-white">Next Gen</p>
+            <p className="text-sm text-gray-400">
+              Built for the next generation of founders & creators.
+            </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Academy → 외부 URL */}
-            <a
-              href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
+          {/* 중앙: Footer Navi 버튼 */}
+          <nav className="flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/about"
+              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
-                Program
-              </p>
-              <div className="mt-3 flex items-center justify-between gap-3">
-                <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                  Next Gen Academy
-                </h3>
-                <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                  Explore →
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
-                10·20대를 위한 크리에이터 & 창업 실전 아카데미.
-                숏폼, 서비스, 브랜드, AI 도구를 활용해{" "}
-                <span className="text-white font-medium">
-                  포트폴리오와 실제 성과
-                </span>
-                를 만드는 프로그램입니다.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-zinc-400">
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  4–6주 코호트
-                </span>
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  Creator / Founder 트랙
-                </span>
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  Execution-first
-                </span>
-              </div>
-            </a>
-
-            {/* Summit → 외부 URL */}
-            <a
-              href="https://luma.com/err3tc9w"
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
-                Event
-              </p>
-              <div className="mt-3 flex items-center justify-between gap-3">
-                <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                  Next Gen Summit 2025
-                </h3>
-                <span className="text-xs text-[#7fff00] group-hover:translate-x-0.5 transition">
-                  Explore →
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
-                서울 DDP에서 열리는{" "}
-                <span className="text-white font-medium">
-                  크리에이터 · 창업가 · 젊은 투자자
-                </span>
-                를 위한 프라이빗 서밋. 이야기, 네트워킹, 그리고 다음 세대의
-                게임 플랜이 공유됩니다.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-zinc-400">
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  Private · Invite-only
-                </span>
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  Seoul · DDP
-                </span>
-                <span className="rounded-full border border-zinc-700 px-3 py-1">
-                  2025년 12월
-                </span>
-              </div>
-            </a>
-          </div>
-        </section>
-      </div>
+              Contact
+            </Link>
+            <Link
+              href="/blog"
+              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/terms"
+              className="rounded-full border border-gray-600 px-3 py-1 transition hover:border-white hover:text-white"
+            >
+              Terms
+            </Link>
+          </nav>
 
-      <Footer />
-    </main>
-  );
-}
+          {/* 오른쪽: Social Link 버튼 */}
+          <div className="flex flex-wrap gap-3 text-sm">
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gray-800 px-3 py-1 transition hover:bg-white hover:text-black"
+            >
