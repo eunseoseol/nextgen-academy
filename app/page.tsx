@@ -39,13 +39,17 @@ function Nav() {
           {openMenu === "works" && (
             <div className="absolute left-1/2 top-full z-20 w-44 -translate-x-1/2 pt-2">
               <div className="rounded-2xl border border-zinc-700 bg-black/90 p-2 text-sm shadow-xl">
-                <Link
-                  href="/academy"
+                {/* Academy → 외부 URL */}
+                <a
+                  href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
+                  target="_blank"
+                  rel="noreferrer"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                   onClick={closeMenu}
                 >
                   Next Gen Academy
-                </Link>
+                </a>
+                {/* Ventures → 내부 라우트 */}
                 <Link
                   href="/ventures"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
@@ -53,13 +57,16 @@ function Nav() {
                 >
                   Next Gen Ventures
                 </Link>
-                <Link
-                  href="/studio"
+                {/* Summit → 외부 URL */}
+                <a
+                  href="https://luma.com/err3tc9w"
+                  target="_blank"
+                  rel="noreferrer"
                   className="block rounded-xl px-3 py-2 hover:bg-zinc-800/80 hover:text-[#7fff00]"
                   onClick={closeMenu}
                 >
                   Next Gen Summit
-                </Link>
+                </a>
               </div>
             </div>
           )}
@@ -196,12 +203,23 @@ function Footer() {
           <div className="grid gap-8 text-sm text-zinc-300 sm:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-2">
               <p className="font-semibold text-white">Programs</p>
-              <Link href="/academy" className="block hover:text-[#7fff00]">
+              {/* Footer에서도 동일하게 외부 URL */}
+              <a
+                href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
+                target="_blank"
+                rel="noreferrer"
+                className="block hover:text-[#7fff00]"
+              >
                 Next Gen Academy
-              </Link>
-              <Link href="/studio" className="block hover:text-[#7fff00]">
+              </a>
+              <a
+                href="https://luma.com/err3tc9w"
+                target="_blank"
+                rel="noreferrer"
+                className="block hover:text-[#7fff00]"
+              >
                 Next Gen Summit
-              </Link>
+              </a>
               <Link href="/ventures" className="block hover:text-[#7fff00]">
                 Next Gen Ventures
               </Link>
@@ -294,7 +312,6 @@ function Footer() {
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
-
       {/* Background Video */}
       <video
         autoPlay
@@ -373,9 +390,11 @@ export default function Page() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {/* Academy */}
-            <Link
-              href="/academy"
+            {/* Academy → 외부 URL */}
+            <a
+              href="https://www.latpeed.com/products/iom3v?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnnjXG6lCWVR1mQRDITxl0Oy01aKhkbY-r2R6jsAY4V3LNVTCbPV59MB2_i_c_aem_2M_BovW6ISYUBgt7uU2IFQ"
+              target="_blank"
+              rel="noreferrer"
               className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
             >
               <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
@@ -408,11 +427,13 @@ export default function Page() {
                   Execution-first
                 </span>
               </div>
-            </Link>
+            </a>
 
-            {/* Summit */}
-            <Link
-              href="/studio"
+            {/* Summit → 외부 URL */}
+            <a
+              href="https://luma.com/err3tc9w"
+              target="_blank"
+              rel="noreferrer"
               className="group rounded-3xl border border-[#7fff00]/40 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur transition hover:-translate-y-1 hover:border-[#7fff00]/80"
             >
               <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
@@ -445,7 +466,7 @@ export default function Page() {
                   2025년 12월
                 </span>
               </div>
-            </Link>
+            </a>
           </div>
         </section>
 
