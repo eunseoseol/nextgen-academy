@@ -6,7 +6,7 @@ export default function Page() {
     <main className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
       
       {/* ========================== */}
-      {/* Background Video */}
+      {/* Background Video (Google Drive) */}
       {/* ========================== */}
       <video
         autoPlay
@@ -15,11 +15,14 @@ export default function Page() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       >
-        <source src="/bg.mp4" type="video/mp4" />
+        <source
+          src="https://drive.google.com/uc?export=download&id=17Oo5EQ5z4dBV85uZ0gWukHP9gfCqDOcS"
+          type="video/mp4"
+        />
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* ========================== */}
       {/* Hero Section */}
