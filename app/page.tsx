@@ -267,7 +267,6 @@ function Footer() {
                 </a>
               </p>
             </div>
-
             <div className="space-y-2">
               <p className="font-semibold text-white">Legal</p>
               <Link
@@ -292,7 +291,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
       {/* Bottom: locale + copy */}
       <div className="border-t border-zinc-900">
         <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col gap-3 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
@@ -308,7 +306,6 @@ function Footer() {
     </footer>
   );
 }
-
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -377,7 +374,6 @@ export default function Page() {
             다루는 스택으로, 다음 세대를 위한 인프라를 구축합니다.
           </p>
         </section>
-
         {/* Join cards */}
         <section className="pb-16 border-t border-zinc-800/80 pt-10">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-8">
@@ -467,115 +463,6 @@ export default function Page() {
                 </span>
               </div>
             </a>
-          </div>
-        </section>
-
-        {/* Leadership */}
-        <section className="pb-20 border-t border-zinc-800/80 pt-10">
-          <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
-            <h2 className="text-2xl sm:text-3xl font-semibold">
-              Meet our leadership
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-stretch">
-            <Link
-              href="/team"
-              className="group rounded-3xl border border-[#7fff00]/60 bg-zinc-900/60 p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1 hover:border-[#7fff00] transition"
-            >
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-[#7fff00]">
-                  Founder & CEO
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-white">
-                  Eunseo Seol
-                </h3>
-                <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
-                  고등학생 시절부터 스타트업 영상 제작, Tesla·Nvidia·Google
-                  투자, 한국 최연소 VC 파트너를 거쳐 Next Gen을 창업한 00년생.
-                  크리에이터 이코노미, 스마트 리빙, 젊은 창업 생태계를
-                  중심으로{" "}
-                  <span className="text-white font-medium">
-                    “다음 세대의 인프라”
-                  </span>
-                  를 빌드하고 있습니다.
-                </p>
-              </div>
-              <div className="mt-5 flex items-center justify-between text-xs text-zinc-400">
-                <span>View full team</span>
-                <span className="inline-flex items-center gap-1 text-[#7fff00] group-hover:translate-x-0.5 transition">
-                  /team
-                  <svg
-                    className="h-3 w-3"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h13" />
-                    <path d="M12 5l6 7-6 7" />
-                  </svg>
-                </span>
-              </div>
-            </Link>
-
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 flex flex-col justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
-                  Next Gen Stack
-                </p>
-                <p className="mt-3 leading-relaxed">
-                  Eunseo는 Academy · Ventures · Summit · House로 이어지는
-                  Next Gen 스택을 설계하고 있습니다. 각 브랜드는 따로 보이지만,
-                  실제로는{" "}
-                  <span className="text-white font-medium">
-                    하나의 게임 플랜
-                  </span>
-                  으로 묶여 있습니다.
-                </p>
-              </div>
-              <div className="mt-4 text-[11px] text-zinc-500">
-                더 많은 팀 스토리는 Team 페이지에서 확인할 수 있습니다.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section
-          id="contact"
-          className="pb-24 border-t border-zinc-800/80 pt-10"
-        >
-          <div className="rounded-3xl border border-zinc-800 p-8 bg-zinc-900/40">
-            <h2 className="text-2xl font-semibold">Contact</h2>
-            <p className="mt-2 text-zinc-300">콜라보 / 제휴 / 채용 문의</p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a
-                href="mailto:hello@nextgen.kr"
-                className="rounded-2xl border border-[#7fff00]/60 bg-[#7fff00]/10 px-5 py-3 text-[#7fff00] hover:bg-[#7fff00]/30"
-              >
-                hello@nextgen.kr
-              </a>
-              <a
-                href="https://instagram.com/nextgen.kr"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-zinc-700 bg-zinc-900/60 px-5 py-3 text-zinc-200 hover:border-[#7fff00] hover:text-[#7fff00]"
-              >
-                Instagram @nextgen.kr
-              </a>
-            </div>
-
-            <div className="mt-6 text-sm text-zinc-400">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-                Address
-              </p>
-              <p className="mt-2">
-                서울특별시 강남구 테헤란로 201 (역삼동, 아주빌딩 2층)
-              </p>
-            </div>
           </div>
         </section>
       </div>
