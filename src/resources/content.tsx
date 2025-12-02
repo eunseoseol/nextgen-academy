@@ -172,9 +172,9 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <></>
         ),
         tags: [
           {
@@ -199,9 +199,9 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <></>
         ),
         tags: [
           {
