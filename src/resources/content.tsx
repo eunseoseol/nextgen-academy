@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Eunseo Seol",
   lastName: "Seol",
   name: `Eunseo Seol`,
-  role: "Design Engineer",
+  role: "Founder & CEO",
   avatar: "/images/avatar.jpg",
   email: "example@gmail.com",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -102,9 +102,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        중학교 3학년 때 주식 투자를 해서 큰 수익을 냄. 이후 한국디지털미디어고등학교에 입학하여 프로그래밍을 익힘. EO Studio 에 Content Producer 로 조인해서 Real Youth 라는 젊은 창업가 & 아티스트 & 크리에이터를 다루는 인터뷰 시리즈를 제작함. Primer 에 Venture Partner 로 영입되어서 래피드와 같은 Creator Economy 스타트업에 투자하고, 약 500명 규모의 Creator Venture Seoul 2025 를 개최함. 
+
       </>
     ),
   },
